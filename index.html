@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.50">
     <title>TSC || SELECTOR</title>
     <link rel="stylesheet" href="style.css">
-    <style>h2 {
+    <style>
+    img,
+    source {
+      width: 40%;
+      height: 20%;
+    }
+    h2 {
         font-size: clamp(1rem, 1.25rem, 1.50rem);
         padding-top: clamp(0.25rem, 0.50rem, 0.75rem);
         color: grey;
@@ -26,10 +32,17 @@
         margin-bottom: clamp(0.5rem, 1rem, 1.5rem);
         border-radius: clamp(0.15625rem, 0.3125rem, 0.46875rem);
     }
-    img,
-    source {
-      width: 40%;
-      height: 20%;
+    a {
+        padding: 6px;
+        border-radius: 16px;
+        background-color: indianred;
+        font: inherit;
+        cursor: not-allowed;
+        text-decoration: none;
+    }
+    .active-anchor {
+        background-color: seagreen;
+        cursor: pointer;
     }
     #darkmode-button {
         background-image: url("images/sun.png");
@@ -45,12 +58,17 @@
         display: flex;
         align-items: center;
     }
-    body#dark-mode #darkmode-button {
+    html#darkmode #darkmode-button {
         background-color: black;
         background-image: url("images/moon.png");
     }
-    body#dark-mode div {
+    html#darkmode div {
       border-color: floralwhite;
+    html#darkmode a {
+        background-color: salmon;
+    }
+    html#darkmode .active-anchor {
+        background-color: forestgreen;
     }
 </style>
     <script src="script.js" defer></script>
@@ -70,17 +88,17 @@
         <div>
             <h2>Pixel Art</h2>
             <h4>Create 2D pixel art for the game.</h4>
-            <a href="Pixel-art.html"><button>SELECT</button></a>
+            <a href="Pixel-art.html" class="active-anchor">SELECT</a>
         </div>
         <div>
             <h2>Programming</h2>
             <h4>Develop and implement game logic, features, and tools.</h4>
-            <a href="Development.html"><button title="We're currently only looking for pixel artists" disabled>SELECT</button></a>
+            <a>SELECT</a>
         </div>
         <div>
             <h2>Music Composition</h2>
             <h4>Create soundtracks and sound effects for the game.</h4>
-            <a href="Music-composition.html"><button title="We're currently only looking for pixel artists" disabled>SELECT</button></a>
+            <a>SELECT</a>
         </div>
     </nav>
 </body>

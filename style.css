@@ -6,36 +6,16 @@
     color: floralwhite;
     overflow-x: hidden;
 }
-body {
-    text-align: center;
+html
+{
     background-color: #fffaf0;
+}
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    text-align: center;
     font-family: sans-serif;
     height: fit-content;
-}
-body#dark-mode {
-    background-color: black;
-    color:  black;
-}
-body#dark-mode h1,
-body#dark-mode h2,
-body#dark-mode h4 {
-    color: floralwhite
-}
-body#dark-mode h3,
-body#dark-mode p {
-    color:  #252525;
-}
-body#dark-mode form {
-    background-color: floralwhite;
-}
-body#dark-mode button {
-    background-color: forestgreen;
-}
-body#dark-mode button:disabled {
-    background-color: salmon;
-}
-body#dark-mode img {
-    filter: invert(100%);
 }
 form {
     width: 40%;
@@ -97,4 +77,29 @@ button:disabled {
     form {
         width: 92%;
     }
+}
+html#darkmode,
+html#darkmode {
+    background-color: black;
+}
+html#darkmode h1,
+html#darkmode h2,
+html#darkmode h4 {
+    color: floralwhite
+}
+html#darkmode h3,
+html#darkmode p {
+    color:  #252525;
+}
+html#darkmode form {
+    background-color: floralwhite;
+}
+html#darkmode button {
+    background-color: forestgreen;
+}
+html#darkmode button:disabled {
+    background-color: salmon;
+}
+html#darkmode img {
+    filter: invert(100%);
 }
