@@ -1,8 +1,15 @@
+@font-face {
+    font-family: "cinzel";
+    src: url('fonts/cinzel-latin-400-normal.woff2') format('woff2'),
+         url('fonts/cinzel-latin-400-normal.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 * {
     box-sizing: border-box;
     margin: 0;
     border: none;
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family: 'cinzel', Arial, sans-serif;
     color: floralwhite;
     overflow-x: hidden;
 }
@@ -14,7 +21,6 @@ body {
     min-height: 100vh;
     min-width: 100vw;
     text-align: center;
-    font-family: sans-serif;
     height: fit-content;
 }
 form {

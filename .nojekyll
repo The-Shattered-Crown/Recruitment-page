@@ -1,5 +1,0 @@
-Hey this just removes a processing step
-that makes GitHub not build files starting with
-_, although its a good tool its not necessary for
-this project. So I just removed it to make the build
-with .nojekyll.
