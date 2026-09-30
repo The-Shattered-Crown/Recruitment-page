@@ -48,24 +48,26 @@ input {
     border-bottom: clamp(0.125rem, 0.25rem, 0.5rem) solid gray;
     font-size: clamp(1rem, 1.125rem, 1.5rem);
 }
-input[type="checkbox"] {
+#checkbox {
     width: clamp(0.75rem, 0.9375rem, 1.25rem);
     height: clamp(0.75rem, 0.9375rem, 1.25rem);
+    background-color: indianred;
+    accent-color: seagreen;
+    cursor: pointer;
 }
 h1,
-h3 {
+p {
     font-size: clamp(1.25rem, 1.50rem, 1.75rem);
     padding-top: clamp(0.5rem, 1rem, 1.5rem);
     padding-bottom: clamp(0.5rem, 1rem, 1.5rem);
     color: grey;
 }
-h3 {
+p {
     font-size: clamp(1rem, 1.25rem, 1.50rem);
     color: floralwhite;
 }
-p {
+label {
     font-size: clamp(1rem, 1.125rem, 1.5rem);
-    display: inline;
 }
 button {
     width: clamp(4.75rem, 6rem, 9.75rem);
@@ -89,11 +91,11 @@ html#darkmode {
 }
 html#darkmode h1,
 html#darkmode h2,
-html#darkmode h4 {
+html#darkmode h3 {
     color: floralwhite
 }
-html#darkmode h3,
-html#darkmode p {
+html#darkmode p,
+html#darkmode label {
     color:  #252525;
 }
 html#darkmode form {
@@ -107,4 +109,7 @@ html#darkmode button:disabled {
 }
 html#darkmode img {
     filter: invert(100%);
+}
+html#darkmode #checkbox {
+    accent-color: forestgreen;
 }
