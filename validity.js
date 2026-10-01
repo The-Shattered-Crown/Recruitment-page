@@ -1,14 +1,13 @@
 const form = document.forms[0];
-const submit = form.querySelector("button")
-form.addEventListener("input", (event) => {
-  event.preventDefault();
+const submitButton = form.querySelector("button")
+form.addEventListener("input", () => {
   if (form.checkValidity()) {
-    submit.disabled = false;
+    submitButton.disabled = false;
   }
   else {
-    submit.disabled = true;
+    submitButton.disabled = true;
   }
 });
-if (submit.disabled == true) {
-   submit.title = "Please fill all fields and accept the terms to submit";
+if (submitButton.disabled) {
+   submitButton.title = "Please fill all fields and accept the terms to submit";
 }

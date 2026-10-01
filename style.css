@@ -24,6 +24,8 @@ body {
     height: fit-content;
 }
 form {
+    color: inherit;
+    font-family: inherit;
     width: 40%;
     min-height: 50vh;
     background: rgba(0, 0, 0, 0.5);
@@ -34,24 +36,36 @@ form {
 }
 textarea,
 input {
+    color: inherit;
+    font-family: inherit;
     width: 80%;
+    margin: clamp(0.75rem, 1rem, 1.5rem);
     background: #252525;
+    text-align: center;
+    transition: border-radius 0.3s ease-out;
 }
 textarea
 {
-    height: clamp(5rem, 100px, 15rem);
-    border-bottom: clamp(0.125rem, 0.25rem, 0.5rem) solid gray;
-    font-size: 18px;
+    padding: clamp(1.5rem, 2.8125rem, 3.5rem);
+    height: clamp(5rem, 10rem, 15rem);
+    font-size: clamp(1rem, 1.125rem, 1.5rem);
 }
 input {
     height: clamp(2rem, 2.5rem, 4rem);
-    border-bottom: clamp(0.125rem, 0.25rem, 0.5rem) solid gray;
     font-size: clamp(1rem, 1.125rem, 1.5rem);
+}
+textarea:focus,
+input:focus {
+    outline: none;
+    border-radius: clamp(1rem, 1.25rem, 1.75rem);
+}
+textarea:focus::placeholder,
+input:focus::placeholder {
+    opacity: 0;
 }
 #checkbox {
     width: clamp(0.75rem, 0.9375rem, 1.25rem);
     height: clamp(0.75rem, 0.9375rem, 1.25rem);
-    background-color: indianred;
     accent-color: seagreen;
     cursor: pointer;
 }
