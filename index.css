@@ -1,3 +1,4 @@
+html { overflow-x: hidden; }
 img,
 source {
     width: 40%;
@@ -25,23 +26,18 @@ div {
     border-radius: clamp(0.15625rem, 0.3125rem, 0.46875rem);
 }
 a {
-    padding: 6px;
-    border-radius: 16px;
+    padding: clamp(0.25rem, 0.375rem, 0.5rem);
+    border-radius: clamp(0.75rem, 1rem, 1.25rem);
     background-color: seagreen;
     cursor: pointer;
     font: inherit;
+    user-select: none;
     text-decoration: none;
 }
 a[aria-disabled="true"] {
     background-color: indianred;
     cursor: not-allowed;
 }
-html#darkmode div {
-    border-color: floralwhite;
-}
-html#darkmode a[aria-disabled="true"] {
-    background-color: salmon;
-}
-html#darkmode a {
-    background-color: forestgreen;
-}
+html#darkmode div { border-color: floralwhite; }
+html#darkmode a[aria-disabled="true"] { background-color: salmon; }
+html#darkmode a { background-color: forestgreen; }
