@@ -6,24 +6,25 @@
     <title>TSC || Recruitment page</title>
     <link rel="icon" type="image/x-icon" href="/images/TSC_Logo.png">
     <link rel="stylesheet" href="style.css">
-    <script src="validity.js" defer></script>
+    <script src="main.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
+    <button id="darkmode-button"></button>
     <br>
     <h1>Join The Shattered Crown as a developer</h1>
     <form action="https://formsubmit.co/8e454c59fe02db66de14b26df5fb6845" method="POST"><br>
-      <input type="hidden" name="applied for" value="Development">
-      <input type="text" name="name" required placeholder="Enter Name"><br><br>
-      <input type="email" name="email" required placeholder="Enter Email"><br><br>
-      <textarea name="experience" required placeholder="Describe your experience so far"></textarea><br><br>
+        <input type="hidden" name="Work" value="Development">
+      <input type="text" name="name" required placeholder="Enter Name">
+      <input type="email" name="email" required placeholder="Enter Email">
+      <textarea name="experience" required placeholder="Describe your experience so far"></textarea>
       <p>TSC is a newly formed team and not an LLC are you okay with the
           fact that you will be paid only upon the success of the game that is
-          being developed right now?</p><br>
-      <label for="checkbox">I agree to the terms</label>
-      <input type="checkbox" id="checkbox" required>
-          <br><br>
-          <button type="submit" disabled>SEND</button>
+          being developed right now?</p>
+            <label for="checkbox">I agree to the terms</label>
+              <input id="checkbox" type="checkbox" required>
+            <br><br>
+            <button type="submit" disabled>SEND</button>
     </form>
 </body>
 </html>
