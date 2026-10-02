@@ -28,7 +28,7 @@ document.addEventListener("keydown", (clicked) => {
       return;
     }
     // Number keys navigation
-    if (!isNaN(clicked.key) && clicked.key !== " ") {
+    if (!isNaN(clicked.key)) {
       if (clicked.key === "4") {
         checkbox.checked = !checkbox.checked;
         form.dispatchEvent(new Event("input"));
@@ -43,6 +43,12 @@ document.addEventListener("keydown", (clicked) => {
     if (index <= 2) {
       clicked.preventDefault();
       textFields[index + 1].focus();
+    }
+  }
+  else if (clicked.key == "Backspace") {
+    if (textFields[index - 1] && !document.activeElement.value) {
+      clicked.preventDefault();
+      textFields[index - 1].focus();
     }
   }
 })

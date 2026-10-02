@@ -110,6 +110,12 @@ button:disabled {
 @media (max-width: 700px) {
     form { width: 92%; }
     textarea { padding: clamp(1.2rem, 2.4rem, 3rem); }
+    #darkmode-button {
+        width: clamp(3rem, 2.3rem, 3rem);
+        height: clamp(3rem, 2.3rem, 3rem);
+        top: clamp(0.25rem, 0.5rem, 0.75rem);
+        left: clamp(0.125rem, 0.25rem, 0.375rem);
+    }
 }
 
 html#darkmode { background-color: black; }

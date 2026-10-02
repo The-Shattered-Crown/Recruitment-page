@@ -1,3 +1,4 @@
+html { overflow-x: hidden; }
 img,
 source {
     width: 40%;
@@ -36,12 +37,6 @@ a[aria-disabled="true"] {
     background-color: indianred;
     cursor: not-allowed;
 }
-html#darkmode div {
-    border-color: floralwhite;
-}
-html#darkmode a[aria-disabled="true"] {
-    background-color: salmon;
-}
-html#darkmode a {
-    background-color: forestgreen;
-}
+html#darkmode div { border-color: floralwhite; }
+html#darkmode a[aria-disabled="true"] { background-color: salmon; }
+html#darkmode a { background-color: forestgreen; }
