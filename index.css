@@ -39,5 +39,9 @@ a[aria-disabled="true"] {
     cursor: not-allowed;
 }
 html#darkmode div { border-color: floralwhite; }
+
 html#darkmode a[aria-disabled="true"] { background-color: salmon; }
+
 html#darkmode a { background-color: forestgreen; }
+
+html#darkmode img { filter: invert(100%); }

@@ -12,8 +12,13 @@
     font-family: 'cinzel', Arial, sans-serif;
     color: floralwhite;
     overflow-x: hidden;
+    transition-property: background-color, accent-color, color, filter;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
 }
-html { background-color: #fffaf0; }
+html {
+    background-color: #fffaf0;
+}
 body {
     min-height: 100vh;
     min-width: 100vw;
@@ -121,15 +126,20 @@ button:disabled {
 }
 
 html#darkmode { background-color: black; }
+
 html#darkmode h1,
 html#darkmode h2,
 html#darkmode h3 { color: floralwhite; }
+
 html#darkmode p,
 html#darkmode label { color:  #252525; }
+
 html#darkmode form { background-color: floralwhite; }
+
 html#darkmode button { background-color: forestgreen; }
+
 html#darkmode button:disabled { background-color: salmon; }
-html#darkmode img { filter: invert(100%); }
+
 html#darkmode #checkbox { accent-color: forestgreen; }
 
 html#darkmode #darkmode-button {
