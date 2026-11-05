@@ -101,7 +101,7 @@ button:disabled {
     cursor: not-allowed;
 }
 #darkmode-button {
-    background-image: url("images/sun.png");
+    background-image: url("../images/sun.png");
     background-size: cover;
     background-color: #FFFF;
     filter: invert(85%);
@@ -144,5 +144,5 @@ html#darkmode #checkbox { accent-color: forestgreen; }
 
 html#darkmode #darkmode-button {
     background-color: black;
-    background-image: url("images/moon.png");
+    background-image: url("../images/moon.png");
 }
