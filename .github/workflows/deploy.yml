@@ -1,58 +1,58 @@
-name: Build & Deploy
+# name: Build & Deploy
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+# concurrency:
+#   group: "pages"
+#   cancel-in-progress: true
 
-on:
-  push:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main ]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
+#       - name: Setup Node
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 24
 
-      - name: Build and Copy Assets
-        run: |
-          npx parcel build index.html --public-url .
-          cp -r images dist/ 2>/dev/null || true
-          cp -r fonts dist/ 2>/dev/null || true
-          echo "${{ secrets.INDEX }}" > "dist/${{ secrets.INDEX }}.txt"
+#       - name: Build and Copy Assets
+#         run: |
+#           npx parcel build index.html --public-url .
+#           cp -r images dist/ 2>/dev/null || true
+#           cp -r fonts dist/ 2>/dev/null || true
+#           echo "${{ secrets.INDEX }}" > "dist/${{ secrets.INDEX }}.txt"
 
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'dist'
+#       - name: Upload Artifact
+#         uses: actions/upload-pages-artifact@v3
+#         with:
+#           path: 'dist'
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+#   deploy:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     permissions:
+#       pages: write
+#       id-token: write
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     steps:
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v4
 
-      - name: Submit to IndexNow
-        uses: jakob-bagterp/index-now-submit-sitemap-urls-action@v1
-        with:
-          host: the-shattered-crown.github.io
-          api_key: ${{ secrets.INDEX }}
-          api_key_location: https://the-shattered-crown.github.io/Recruitment-page/${{ secrets.INDEX }}.txt
-          urls: |
-              https://the-shattered-crown.github.io/Recruitment-page/index.html
-              # https://the-shattered-crown.github.io/Recruitment-page/Pixel-art.html
-              # https://the-shattered-crown.github.io/Recruitment-page/Music-composition.html
-              # https://the-shattered-crown.github.io/Recruitment-page/Development.html
+#       - name: Submit to IndexNow
+#         uses: jakob-bagterp/index-now-submit-sitemap-urls-action@v1
+#         with:
+#           host: the-shattered-crown.github.io
+#           api_key: ${{ secrets.INDEX }}
+#           api_key_location: https://the-shattered-crown.github.io/Recruitment-page/${{ secrets.INDEX }}.txt
+#           urls: |
+#               https://the-shattered-crown.github.io/Recruitment-page/index.html
+#               # https://the-shattered-crown.github.io/Recruitment-page/Pixel-art.html
+#               # https://the-shattered-crown.github.io/Recruitment-page/Music-composition.html
+#               # https://the-shattered-crown.github.io/Recruitment-page/Development.html
