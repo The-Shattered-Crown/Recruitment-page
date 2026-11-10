@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and Copy Assets
         run: |
-          bunx run build
+          bun run build
           echo "${{ secrets.INDEX }}" > "dist/${{ secrets.INDEX }}.txt"
 
       - name: Upload Artifact
