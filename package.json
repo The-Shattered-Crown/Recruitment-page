@@ -4,7 +4,7 @@
   "private": true,
   "source": ["index.html", "src/html/*.html"],
   "scripts": {
-    "build": "parcel build --public-url ."
+    "build": "bunx parcel build --public-url ."
   },
   "devDependencies": {
     "parcel": "^2.12.0"
