@@ -2,7 +2,7 @@
   "name": "recruitment-page",
   "version": "1.0.2",
   "private": true,
-  "source": ["index.html", "src/html/*.html"],
+  "source": "src/html/*.html",
   "scripts": {
     "build": "bunx parcel build --public-url ."
   },
