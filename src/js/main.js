@@ -1,54 +1,55 @@
 const form = document.forms[0];
-const submitButton = form.querySelector("button")
-const formInputs = form.querySelectorAll("input")
-const textFields = Array.from(form.querySelectorAll("input, textarea"))
-const checkbox = document.getElementById("checkbox")
+const submitButton = form.querySelector("button");
+const textFields = Array.from(form.querySelectorAll("input, textarea"));
+const checkbox = document.getElementById("checkbox");
 
 form.addEventListener("input", () => {
-  if (form.checkValidity()) { submitButton.disabled = false; }
-  else { submitButton.disabled = true; }
+  if (form.checkValidity()) {
+    submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
+  }
 });
-if (submitButton.disabled) { submitButton.title = "Please fill all fields and accept the terms to submit"; }
+
+if (submitButton.disabled) {
+  submitButton.title = "Please fill all fields and accept the terms to submit";
+}
 // Keyboard navigation
 document.addEventListener("keydown", (clicked) => {
+  const key = clicked.key;
   const index = textFields.indexOf(document.activeElement);
+  const activeElement = document.activeElement;
+  // If these variables are used in a if/else if statement they check whether they exist
+  const ForwardIndex = textFields[index + 1];
+  const BackwardIndex = textFields[index - 1];
   // Checks if altKey is pressed
   if (clicked.altKey) {
-    // Disables autofill popup
-    if (clicked.key === 'ArrowDown' || clicked.key === 'ArrowUp') {
-      clicked.preventDefault();
-
-      const input = clicked.target;
-      input.readOnly = true;
-      input.focus();
-      setTimeout(() => { input.readOnly = false; }, 50);
-      //Switches input fields
-      if (clicked.key === 'ArrowDown' && textFields[index + 1]) { textFields[index + 1].focus(); }
-      else if (clicked.key === 'ArrowUp' && textFields[index - 1]) { textFields[index - 1].focus(); }
-      return;
-    }
-    // Number keys navigation
-    if (!isNaN(clicked.key)) {
-      if (clicked.key === "4") {
+    //Switches input fields after checking if they exist
+    if (key === "ArrowDown" && ForwardIndex) {
+      ForwardIndex.focus();
+    } else if (key === "ArrowUp" && BackwardIndex) {
+      BackwardIndex.focus();
+    } else if (!isNaN(key)) {
+      if (key === "4") {
         checkbox.checked = !checkbox.checked;
         form.dispatchEvent(new Event("input"));
+      } else if (key === "5") {
+        submitButton.click();
+      } else if (textFields[key]) {
+        textFields[key].focus();
       }
-      else if (clicked.key === "5") { submitButton.click(); }
-      else if (textFields[clicked.key]) { textFields[clicked.key].focus(); }
-      return;
     }
   }
   // Enter key to move to next field IF current field type is input
-  if (clicked.key == "Enter") {
-    if (index <= 2) {
-      clicked.preventDefault();
-      textFields[index + 1].focus();
-    }
+  else if (clicked.key == "Enter" && index <= 2) {
+    clicked.preventDefault();
+    ForwardIndex.focus();
+  } else if (
+    clicked.key == "Backspace" &&
+    BackwardIndex &&
+    activeElement.value.slice(0, activeElement.selectionStart)
+  ) {
+    clicked.preventDefault();
+    BackwardIndex.focus();
   }
-  else if (clicked.key == "Backspace") {
-    if (textFields[index - 1] && !document.activeElement.value) {
-      clicked.preventDefault();
-      textFields[index - 1].focus();
-    }
-  }
-})
+});

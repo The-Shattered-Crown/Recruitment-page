@@ -1,148 +1,166 @@
 @font-face {
-    font-family: "cinzel";
-    src: url('../fonts/cinzel-latin-400-normal.woff2') format('woff2'),
-         url('../fonts/cinzel-latin-400-normal.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "cinzel";
+  src:
+    url("../fonts/cinzel-latin-400-normal.woff2") format("woff2"),
+    url("../fonts/cinzel-latin-400-normal.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 * {
-    box-sizing: border-box;
-    margin: 0;
-    border: none;
-    font-family: 'cinzel', Arial, sans-serif;
-    color: floralwhite;
-    overflow-x: hidden;
-    transition-property: background-color, accent-color, color, filter;
-    transition-duration: 200ms;
-    transition-timing-function: ease-in;
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  font-family: "cinzel", Arial, sans-serif;
+  color: floralwhite;
+  overflow-x: hidden;
+  transition-property: background-color, accent-color, color, filter;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in;
 }
 html {
-    background-color: #fffaf0;
+  background-color: #fffaf0;
 }
 body {
-    min-height: 100vh;
-    min-width: 100vw;
-    text-align: center;
-    height: fit-content;
+  min-height: 100vh;
+  min-width: 100vw;
+  text-align: center;
+  height: fit-content;
 }
 form {
-    color: inherit;
-    font-family: inherit;
-    width: 40%;
-    min-height: 50vh;
-    background: rgba(0, 0, 0, 0.5);
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: clamp(0.5rem, 1rem, 1.5rem);
-    padding: clamp(1.5rem, 2rem, 3rem);
+  color: inherit;
+  font-family: inherit;
+  width: 40%;
+  min-height: 50vh;
+  background: rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: clamp(0.5rem, 1rem, 1.5rem);
+  padding: clamp(1.5rem, 2rem, 3rem);
 }
 textarea,
 input {
-    color: inherit;
-    font-family: inherit;
-    width: 80%;
-    margin: clamp(0.75rem, 1rem, 1.5rem);
-    background: #252525;
-    text-align: center;
-    transition: border-radius 0.3s ease-out;
+  color: inherit;
+  font-family: inherit;
+  width: 80%;
+  margin: clamp(0.75rem, 1rem, 1.5rem);
+  background: #252525;
+  text-align: center;
+  transition: border-radius 0.3s ease-out;
 }
-textarea
-{
-    padding: clamp(1.5rem, 3.5rem, 4.8rem);
-    height: clamp(5rem, 10rem, 15rem);
-    font-size: clamp(1rem, 1.125rem, 1.5rem);
+textarea {
+  padding: clamp(1.5rem, 3.5rem, 4.8rem);
+  height: clamp(5rem, 10rem, 15rem);
+  font-size: clamp(1rem, 1.125rem, 1.5rem);
 }
 input {
-    height: clamp(2rem, 2.5rem, 4rem);
-    font-size: clamp(1rem, 1.125rem, 1.5rem);
+  height: clamp(2rem, 2.5rem, 4rem);
+  font-size: clamp(1rem, 1.125rem, 1.5rem);
 }
 textarea:focus,
 input:focus {
-    outline: none;
-    border-radius: clamp(1rem, 1.25rem, 1.75rem);
+  outline: none;
+  border-radius: clamp(1rem, 1.25rem, 1.75rem);
 }
 textarea:focus::placeholder,
 input:focus::placeholder {
-    opacity: 0;
+  opacity: 0;
 }
 #checkbox {
-    width: clamp(0.75rem, 0.9375rem, 1.25rem);
-    height: clamp(0.75rem, 0.9375rem, 1.25rem);
-    accent-color: seagreen;
-    cursor: pointer;
+  width: clamp(0.75rem, 0.9375rem, 1.25rem);
+  height: clamp(0.75rem, 0.9375rem, 1.25rem);
+  accent-color: seagreen;
+  cursor: pointer;
 }
 h1,
 p {
-    font-size: clamp(1.25rem, 1.50rem, 1.75rem);
-    padding-top: clamp(0.5rem, 1rem, 1.5rem);
-    padding-bottom: clamp(0.5rem, 1rem, 1.5rem);
-    color: grey;
+  font-size: clamp(1.25rem, 1.5rem, 1.75rem);
+  padding-top: clamp(0.5rem, 1rem, 1.5rem);
+  padding-bottom: clamp(0.5rem, 1rem, 1.5rem);
+  color: grey;
 }
 p {
-    font-size: clamp(1rem, 1.25rem, 1.50rem);
-    color: floralwhite;
+  font-size: clamp(1rem, 1.25rem, 1.5rem);
+  color: floralwhite;
 }
 label {
-    font-size: clamp(1rem, 1.125rem, 1.5rem);
-    user-select: none;
+  font-size: clamp(1rem, 1.125rem, 1.5rem);
+  user-select: none;
 }
 button {
-    width: clamp(4.75rem, 6rem, 9.75rem);
-    height: clamp(1.75rem, 2rem, 3.75rem);
-    border-radius: clamp(0.3rem, 7rem, 1rem);
-    cursor: pointer;
-    background: seagreen;
-    font-size: clamp(0.75rem, 1rem, 1.25rem);
-    user-select: none;
-    white-space: nowrap;
+  width: clamp(4.75rem, 6rem, 9.75rem);
+  height: clamp(1.75rem, 2rem, 3.75rem);
+  border-radius: clamp(0.3rem, 7rem, 1rem);
+  cursor: pointer;
+  background: seagreen;
+  font-size: clamp(0.75rem, 1rem, 1.25rem);
+  user-select: none;
+  white-space: nowrap;
 }
 button:disabled {
-    background-color: indianred;
-    cursor: not-allowed;
+  background-color: indianred;
+  cursor: not-allowed;
 }
 #darkmode-button {
-    background-image: url("../images/sun.png");
-    background-size: cover;
-    background-color: #FFFF;
-    filter: invert(85%);
-    width: clamp(2rem, 2.3rem, 3rem);
-    height: clamp(2rem, 2.3rem, 3rem);
-    position: relative;
-    top: clamp(0.25rem, 0.5rem, 0.75rem);
-    left: clamp(0.125rem, 0.25rem, 0.375rem);
-    border-radius: 75%;
-    display: flex;
-    align-items: center;
+  background-image: url("../images/sun.png");
+  background-size: cover;
+  background-color: #ffff;
+  filter: invert(85%);
+  width: clamp(2rem, 2.3rem, 3rem);
+  height: clamp(2rem, 2.3rem, 3rem);
+  position: relative;
+  top: clamp(0.25rem, 0.5rem, 0.75rem);
+  left: clamp(0.125rem, 0.25rem, 0.375rem);
+  border-radius: 75%;
+  display: flex;
+  align-items: center;
 }
 @media (max-width: 700px) {
-    form { width: 92%; }
-    textarea { padding: clamp(1.2rem, 2.4rem, 3rem); }
-    #darkmode-button {
-        width: clamp(3rem, 2.3rem, 3rem);
-        height: clamp(3rem, 2.3rem, 3rem);
-        top: clamp(0.25rem, 0.5rem, 0.75rem);
-        left: clamp(0.125rem, 0.25rem, 0.375rem);
-    }
+  form {
+    width: 92%;
+  }
+  textarea {
+    padding: clamp(1.2rem, 2.4rem, 3rem);
+  }
+  #darkmode-button {
+    width: clamp(3rem, 2.3rem, 3rem);
+    height: clamp(3rem, 2.3rem, 3rem);
+    top: clamp(0.25rem, 0.5rem, 0.75rem);
+    left: clamp(0.125rem, 0.25rem, 0.375rem);
+  }
 }
 
-html#darkmode { background-color: black; }
+html#darkmode {
+  background-color: black;
+}
 
 html#darkmode h1,
 html#darkmode h2,
-html#darkmode h3 { color: floralwhite; }
+html#darkmode h3 {
+  color: floralwhite;
+}
 
 html#darkmode p,
-html#darkmode label { color:  #252525; }
+html#darkmode label {
+  color: #252525;
+}
 
-html#darkmode form { background-color: floralwhite; }
+html#darkmode form {
+  background-color: floralwhite;
+}
 
-html#darkmode button { background-color: forestgreen; }
+html#darkmode button {
+  background-color: forestgreen;
+}
 
-html#darkmode button:disabled { background-color: salmon; }
+html#darkmode button:disabled {
+  background-color: salmon;
+}
 
-html#darkmode #checkbox { accent-color: forestgreen; }
+html#darkmode #checkbox {
+  accent-color: forestgreen;
+}
 
 html#darkmode #darkmode-button {
-    background-color: black;
-    background-image: url("../images/moon.png");
+  background-color: black;
+  background-image: url("../images/moon.png");
 }

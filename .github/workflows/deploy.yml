@@ -6,7 +6,7 @@ concurrency:
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist'
+          path: "dist"
 
   deploy:
     needs: build
@@ -50,7 +50,7 @@ jobs:
           api_key: ${{ secrets.INDEX }}
           api_key_location: https://the-shattered-crown.github.io/Recruitment-page/${{ secrets.INDEX }}.txt
           urls: |
-              https://the-shattered-crown.github.io/Recruitment-page/index.html
-              # https://the-shattered-crown.github.io/Recruitment-page/Pixel-art.html
-              # https://the-shattered-crown.github.io/Recruitment-page/Music-composition.html
-              # https://the-shattered-crown.github.io/Recruitment-page/Development.html
+            https://the-shattered-crown.github.io/Recruitment-page/index.html
+            # https://the-shattered-crown.github.io/Recruitment-page/Pixel-art.html
+            # https://the-shattered-crown.github.io/Recruitment-page/Music-composition.html
+            # https://the-shattered-crown.github.io/Recruitment-page/Development.html
