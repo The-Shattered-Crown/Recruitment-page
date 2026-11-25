@@ -1,11 +1,7 @@
 const htmlClass = document.documentElement.classList;
 const darkModeButton = document.getElementById("darkmode-button");
-if (sessionStorage.getItem("darkMode") == null) {
-  sessionStorage.setItem("darkMode", "false");
-}
-let darkMode = JSON.parse(sessionStorage.getItem("darkMode"));
 
-if (darkMode === true) {
+if (JSON.parse(sessionStorage.getItem("darkMode")) === true) {
   htmlClass.toggle("darkmode");
 }
 

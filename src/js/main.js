@@ -17,8 +17,8 @@ if (submitButton.disabled) {
 // Keyboard navigation
 document.addEventListener("keydown", (clicked) => {
   const key = clicked.key;
-  const index = textFields.indexOf(document.activeElement);
-  const activeElement = document.activeElement;
+  const activeElement = document.activeElement
+  const index = textFields.indexOf(activeElement);
   // If these variables are used in a if/else if statement they check whether they exist
   const ForwardIndex = textFields[index + 1];
   const BackwardIndex = textFields[index - 1];
@@ -47,7 +47,7 @@ document.addEventListener("keydown", (clicked) => {
   } else if (
     clicked.key == "Backspace" &&
     BackwardIndex &&
-    activeElement.value.slice(0, activeElement.selectionStart)
+    !activeElement.value
   ) {
     clicked.preventDefault();
     BackwardIndex.focus();
