@@ -1,18 +1,16 @@
-const html = document.documentElement;
+const htmlClass = document.documentElement.classList;
+const darkModeButton = document.getElementById("darkmode-button");
 if (sessionStorage.getItem("darkMode") == null) {
   sessionStorage.setItem("darkMode", "false");
 }
 let darkMode = JSON.parse(sessionStorage.getItem("darkMode"));
-function applyDarkMode() {
-  if (darkMode) {
-    html.id = "darkmode";
-  } else {
-    html.removeAttribute("id");
-  }
+
+if (darkMode === true) {
+  htmlClass.toggle("darkmode");
 }
-applyDarkMode();
-document.getElementById("darkmode-button").addEventListener("click", () => {
+
+darkModeButton.addEventListener("click", () => {
   darkMode = !darkMode;
+  htmlClass.toggle("darkmode");
   sessionStorage.setItem("darkMode", darkMode);
-  applyDarkMode();
 });

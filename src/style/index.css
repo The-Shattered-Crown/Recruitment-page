@@ -40,18 +40,18 @@ a[aria-disabled="true"] {
   background-color: indianred;
   cursor: not-allowed;
 }
-html#darkmode div {
+html.darkmode div {
   border-color: floralwhite;
 }
 
-html#darkmode a[aria-disabled="true"] {
+html.darkmode a[aria-disabled="true"] {
   background-color: salmon;
 }
 
-html#darkmode a {
+html.darkmode a {
   background-color: forestgreen;
 }
 
-html#darkmode img {
+html.darkmode img {
   filter: invert(100%);
 }
