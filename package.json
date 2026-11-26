@@ -4,7 +4,7 @@
   "private": true,
   "source": "src/html/*.html",
   "scripts": {
-    "package": "bunx parcel build --public-url . --no-source-maps --target modern"
+    "package": "bunx parcel build --public-url . --no-source-maps"
   },
   "devDependencies": {
     "parcel": "^2.12.0"
