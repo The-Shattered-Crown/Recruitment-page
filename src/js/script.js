@@ -6,7 +6,6 @@ if (JSON.parse(sessionStorage.getItem("darkMode")) === true) {
 }
 
 darkModeButton.addEventListener("click", () => {
-  darkMode = !darkMode;
   htmlClass.toggle("darkmode");
   sessionStorage.setItem("darkMode", darkMode);
 });
